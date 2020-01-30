@@ -27,12 +27,14 @@ int main() {
 	coords2.y1 = 1;
 	coords2.y2 = 3;
 
+	std::vector<char> gameBoard = { 'O','X','O','O','X','X','O',' ','X' };
 
 	while (response != 99) {
 		cout << "Which example would you like to see?" << endl;
 		cout << "1. Number Swapper" << endl;
 		cout << "2. Word Frequency Finder" << endl;
 		cout << "3. Point of intersection" << endl;
+		cout << "4. check to see if tic tac toe is won" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -50,6 +52,9 @@ int main() {
 			break;
 		case 3:
 			intersect(coords1, coords2);
+			break;
+		case 4:
+			isWinner(gameBoard);
 			break;
 		default:
 			cout << "exiting" << endl;

@@ -1,6 +1,7 @@
 #include "firstProblemSet.h"
 
 bool isParallel(double, double, double, double);
+bool check(std::vector<char>, char);
 
 // this is a function to swap numbers in place
 void numSwap(int arr[], int a, int b) {
@@ -75,7 +76,8 @@ void intersect(coords lineOne,coords lineTwo) {
 		cout << "intercepts at (" << x << "," << y << ")" << endl;
 	}
 }
-
+// simply checks if the function is parallel by comparing the slopes and y ints
+// to be parallel it needs the same slope AND the same y ints
 bool isParallel(double slope1, double slope2, double yInt1, double yInt2) {
 	if (slope1 != NULL && slope2 != NULL) { // final step of checking for undefined lines
 		if (slope1 == slope2) { // means lines are parallel or overlapping	
@@ -87,4 +89,54 @@ bool isParallel(double slope1, double slope2, double yInt1, double yInt2) {
 		}
 		return false;
 	}
+	return false;
+}
+
+// this function determines if someone has won a game of tic tac toe
+// the thought process behind this is that there is a vector of chars that acts as 
+// each square. assuming it is a 3x3 grid, there are 8 
+// possible wins, 3 vert, 3 horiz, and 2 diag
+// this also assumes that the items are stored as capital chars
+void isWinner(std::vector<char> board) {
+	// check X
+	check(board, 'X');
+	//check O
+	check(board, 'O');
+}
+
+bool check(std::vector<char> board, char player) {
+	if (board[0] == player && board[1] == player && board[2] == player) {// horiz top win
+		cout << player << " wins, top row" << endl;
+		return true;
+	}
+	else if (board[3] == player && board[4] == player && board[5] == player) {// horiz mid win
+		cout << player << " wins, mid row" << endl;
+		return true;
+	}
+	else if (board[6] == player && board[7] == player && board[8] == player) {// horiz bot win
+		cout << player << " wins, bot row" << endl;
+		return true;
+	}
+	else if (board[0] == player && board[3] == player && board[6] == player) {// vert left win
+		cout << player << " wins, left col" << endl;
+		return true;
+	}
+	else if (board[1] == player && board[4] == player && board[7] == player) {// vert mid win
+		cout << player << " wins, mid col" << endl;
+		return true;
+	}
+	else if (board[2] == player && board[5] == player && board[8] == player) {// vert right win
+		cout << player << " wins, right col" << endl;
+		return true;
+	}
+	else if (board[0] == player && board[4] == player && board[8] == player) {// diag top to bot win
+		cout << player << " wins, diagonally" << endl;
+		return true;
+	}
+	else if (board[6] == player && board[4] == player && board[2] == player) {// diag bot to top win
+		cout << player << " wins, diagonally" << endl;
+		return true;
+	}
+	else
+		return false;
 }

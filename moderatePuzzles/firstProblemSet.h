@@ -19,3 +19,6 @@ int wordFreq(string, string);
 
 // 3.) find intersection of two lines given start and end point
 void intersect(coords, coords);
+
+// 4.) check to see if someone has won tic tac toe
+void isWinner(std::vector<char>);
