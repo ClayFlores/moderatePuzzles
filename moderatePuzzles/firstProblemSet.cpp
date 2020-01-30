@@ -2,7 +2,7 @@
 
 bool isParallel(double, double, double, double);
 bool check(std::vector<char>, char);
-
+int fact(int);
 // this is a function to swap numbers in place
 void numSwap(int arr[], int a, int b) {
 	arr[a] = arr[a] - arr[b]; // arr[a] stores 5 - 1 = 4
@@ -139,4 +139,30 @@ bool check(std::vector<char> board, char player) {
 	}
 	else
 		return false;
+}
+
+// this finds the number of trailing zeros of n!
+// first will find n! and then check trailing zeros
+// by attempting to mod by 10 until it does not work
+int trailZero(int n) {
+	int count = 0;
+
+	cout << n << "! is: ";
+	n = fact(n); // n is now the value of n!
+	cout << n << endl;
+	while (n % 10 == 0) { // executes when there is a trailing zero
+		n = n / 10;
+		count++; 
+	}
+	cout << count << " trailing zeros" << endl;
+	return count;
+}
+
+// this is a simple function to find n! recursively
+int fact(int num) {
+	if (num <= 0) {
+		return 1;
+	}
+	else
+		return num * fact(num - 1);
 }

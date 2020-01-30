@@ -35,6 +35,7 @@ int main() {
 		cout << "2. Word Frequency Finder" << endl;
 		cout << "3. Point of intersection" << endl;
 		cout << "4. check to see if tic tac toe is won" << endl;
+		cout << "5. find number of trailing zeros for n!" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -55,6 +56,10 @@ int main() {
 			break;
 		case 4:
 			isWinner(gameBoard);
+			break;
+		case 5:
+			trailZero(10);
+			trailZero(4);
 			break;
 		default:
 			cout << "exiting" << endl;

@@ -22,3 +22,6 @@ void intersect(coords, coords);
 
 // 4.) check to see if someone has won tic tac toe
 void isWinner(std::vector<char>);
+
+// 5.) find number of trailing zeros of n!
+int trailZero(int);
