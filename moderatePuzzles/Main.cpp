@@ -5,13 +5,16 @@
 
 #include <iostream>
 #include "firstProblemSet.h"
+
 using std::cout;
 using std::endl;
 
-void printArray(int[]);
+void printArray(std::array<int,5>);
 int main() {
 
-	int genArr[5] = { 1,2,3,4,5 };
+	std::array<int, 5> genArr = { 1,2,3,4,5 };
+	std::array<int, 5> majArr = {20,14,8,16,32};
+
 	int response = -1;
 	string txt = "That, that is, is. That, that is not, is not.";
 	coords coords1;
@@ -36,6 +39,7 @@ int main() {
 		cout << "3. Point of intersection" << endl;
 		cout << "4. check to see if tic tac toe is won" << endl;
 		cout << "5. find number of trailing zeros for n!" << endl;
+		cout << "6. Find the smallest difference of two arrays" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -61,6 +65,9 @@ int main() {
 			trailZero(10);
 			trailZero(4);
 			break;
+		case 6:
+			cout << "Smallest diff between General and Major " << smallDiff(genArr, majArr) << endl;
+			break;
 		default:
 			cout << "exiting" << endl;
 			response = 99;
@@ -71,8 +78,8 @@ int main() {
 }
 
 
-void printArray(int arr[]) {
-	for (int i = 0; i < 5; i++) {
+void printArray(std::array<int,5> arr) {
+	for (int i = 0; i < arr.size(); i++) {
 		cout << arr[i] << ", ";
 	}
 	cout << endl;

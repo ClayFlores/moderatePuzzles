@@ -4,7 +4,7 @@ bool isParallel(double, double, double, double);
 bool check(std::vector<char>, char);
 int fact(int);
 // this is a function to swap numbers in place
-void numSwap(int arr[], int a, int b) {
+void numSwap(array<int,5> arr, int a, int b) {
 	arr[a] = arr[a] - arr[b]; // arr[a] stores 5 - 1 = 4
 	arr[b] = arr[a] + arr[b]; // arr[b] stores 4 + 1 = 5
 	arr[a] = arr[b] - arr[a]; // arr[a] stores 5 - 4 = 1
@@ -165,4 +165,22 @@ int fact(int num) {
 	}
 	else
 		return num * fact(num - 1);
+}
+
+// this function takes two arrays (that don't have to be equal size generally
+// but for the sake of THIS algorithm will be) and finds the smallest difference between the terms
+// the difference must be non negative
+int smallDiff(array<int, 5> arr1, array<int, 5> arr2) {
+	int smallest = 9999999; // arbitrarily large number, not the most elegant solution as it means it might not work for really large numbers
+	int temp; 
+	for (int i = 0; i < arr1.size(); i++) {
+		for (int inner = 0; inner < arr2.size(); inner++) {
+			if ((arr1[i] - arr2[inner] >= 0) && (smallest > arr1[i] - arr2[inner])) // first part ensures non neg, second compares to see if new smallest
+				smallest = arr1[i] - arr2[inner];
+			else if ((arr2[inner] - arr1[i] >= 0) && (smallest > arr2[inner] - arr1[i])) // tries swapping positions in the event the first check fails
+				smallest = arr2[inner] - arr1[i];
+		}
+	}
+
+	return smallest;
 }

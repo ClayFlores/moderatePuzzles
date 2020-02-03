@@ -2,9 +2,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <array>
+
 using std::string;
 using std::cout;
 using std::endl;
+using std::array;
 
 // declaration for problem 3
 struct coords {
@@ -12,7 +15,7 @@ struct coords {
 };
 
 // 1.) swap two numbers in place
-void numSwap(int[], int, int);
+void numSwap(array<int,5>, int, int);
 
 // 2.) find freq of occurrences of word
 int wordFreq(string, string);
@@ -25,3 +28,6 @@ void isWinner(std::vector<char>);
 
 // 5.) find number of trailing zeros of n!
 int trailZero(int);
+
+// 6.) find the smallest diff between two arrays
+int smallDiff(array<int, 5>, array<int, 5>);
