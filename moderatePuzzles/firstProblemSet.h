@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <math.h> // for signbit
 
 using std::string;
 using std::cout;
@@ -31,3 +32,6 @@ int trailZero(int);
 
 // 6.) find the smallest diff between two arrays
 int smallDiff(array<int, 5>, array<int, 5>);
+
+// 7.) find the max of two numbers without if-else or other comparison operators
+bool largerNum(int, int);

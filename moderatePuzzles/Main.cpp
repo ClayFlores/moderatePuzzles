@@ -1,10 +1,12 @@
-// This is a main funtion that will run various puzzles of medium difficulty from 
+// This is a main funtion that will run various puzzles of moderate difficulty from 
 // the book "Cracking the Coding Interview"
 //
 
 
 #include <iostream>
+
 #include "firstProblemSet.h"
+#include "secondProblemSet.h"
 
 using std::cout;
 using std::endl;
@@ -16,6 +18,8 @@ int main() {
 	std::array<int, 5> majArr = {20,14,8,16,32};
 
 	int response = -1;
+	int num1 = 22;
+	int num2 = 44;
 	string txt = "That, that is, is. That, that is not, is not.";
 	coords coords1;
 	coords coords2;
@@ -32,6 +36,7 @@ int main() {
 
 	std::vector<char> gameBoard = { 'O','X','O','O','X','X','O',' ','X' };
 
+
 	while (response != 99) {
 		cout << "Which example would you like to see?" << endl;
 		cout << "1. Number Swapper" << endl;
@@ -40,6 +45,8 @@ int main() {
 		cout << "4. check to see if tic tac toe is won" << endl;
 		cout << "5. find number of trailing zeros for n!" << endl;
 		cout << "6. Find the smallest difference of two arrays" << endl;
+		cout << "7. Check to see which num is larger" << endl;
+		cout << "8. Print an english version of an int" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -67,6 +74,17 @@ int main() {
 			break;
 		case 6:
 			cout << "Smallest diff between General and Major " << smallDiff(genArr, majArr) << endl;
+			break;
+		case 7:
+			cout << "Let's see if " << num1 << " is larger than " << num2 << endl;
+			if (!largerNum(num1, num2)) { // since returning a 1 for this particular bit means neg
+				cout << num1 << " is larger" << endl;
+			}
+			else
+				cout << num2 << " is larger" << endl;
+			break;
+		case 8:
+			intToEng(123456);
 			break;
 		default:
 			cout << "exiting" << endl;

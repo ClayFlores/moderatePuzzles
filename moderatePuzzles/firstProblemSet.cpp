@@ -184,3 +184,12 @@ int smallDiff(array<int, 5> arr1, array<int, 5> arr2) {
 
 	return smallest;
 }
+
+
+// this function finds the larger of two numbers 
+// i think it's done by subtracting one from the other and checking the most bit that determines pos or neg
+// to see if it is pos or neg and thus telling us which is larger
+bool largerNum(int a, int b) {
+	double temp = a - b;
+	return signbit(temp);
+}
