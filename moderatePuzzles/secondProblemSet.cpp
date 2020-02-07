@@ -75,3 +75,37 @@ void printIndVal(char num) {
 		break;
 	}
 }
+
+// this function allows you to do math operations on integers
+// it will only use addition to do these tasks
+// op will be: 1 for sub, 2 for mult, 3 for div
+void addOnly(int num1, int num2, int op) {
+	int sum = 0;
+	if (op == 1) { // sub
+		cout << num1 << " - " << num2 << " = ";
+		num1 += -num2;
+		cout << num1 << endl;
+	}
+	else if (op == 2) { // mult
+		cout << num1 << " * " << num2 << " = ";
+		for (int i = 0; i < num2; i++) {
+			sum += num1;
+		}
+		cout << sum << endl;
+	}
+	else if (op == 3) { // div
+		if (num2 != 0) { // div by zero check
+			cout << num1 << " / " << num2 << " = ";
+			while (num1 + -num2 > 0) {
+				num1 += -num2;
+				sum++;
+			}
+
+			cout << sum << endl;
+		}
+		else
+			cout << "cannot div by zero" << endl;
+	}
+	else
+		cout << "no op specified" << endl;
+}

@@ -47,6 +47,7 @@ int main() {
 		cout << "6. Find the smallest difference of two arrays" << endl;
 		cout << "7. Check to see which num is larger" << endl;
 		cout << "8. Print an english version of an int" << endl;
+		cout << "9. Use only add operator for mult / divide / subtract" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -85,6 +86,12 @@ int main() {
 			break;
 		case 8:
 			intToEng(123456);
+			break;
+		case 9:
+			addOnly(5, 3, 1); // 5, 3, sub
+			addOnly(5, 3, 2); // 5, 3, mult
+			addOnly(10, 5, 3); // 10, 5, div
+			addOnly(23, 5, 3); // div
 			break;
 		default:
 			cout << "exiting" << endl;
