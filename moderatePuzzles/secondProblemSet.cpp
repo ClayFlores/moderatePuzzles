@@ -109,3 +109,35 @@ void addOnly(int num1, int num2, int op) {
 	else
 		cout << "no op specified" << endl;
 }
+
+// looks through a list of people and checks the year that most people were alive
+// this would be really slow for long lists, i think a hash table would work better
+// in that situation
+void mostAlive(std::vector<lives> list) {
+	int mostLive = 0;
+	int i = 0;
+	int year = 0;
+	yrCount temp;
+	std::vector<yrCount> yrTally;
+
+	for (int j = 0; j < list.size(); j++) {
+		year = list[i].born;
+		while (i < (list[i].died - list[i].born))
+		{
+			if (yrTally.size() != NULL && (year == yrTally[i].year)) {// if in registry
+				yrTally[i].count++; // inc count
+				if (yrTally[i].count > mostLive)
+					mostLive = yrTally[i].count; // new highest
+			}
+			else { // adds to registry
+				temp.year = year;
+				temp.count = 1;
+				yrTally.push_back(temp);
+			}
+
+			i++;
+		}
+		i = 0;
+	}
+	cout << mostLive << endl;
+}

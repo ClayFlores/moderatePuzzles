@@ -12,6 +12,7 @@ using std::cout;
 using std::endl;
 
 void printArray(std::array<int,5>);
+
 int main() {
 
 	std::array<int, 5> genArr = { 1,2,3,4,5 };
@@ -36,6 +37,20 @@ int main() {
 
 	std::vector<char> gameBoard = { 'O','X','O','O','X','X','O',' ','X' };
 
+	lives person1, person2, person3;
+	person1.name = "Simon";
+	person1.born = 1902;
+	person1.died = 1955;
+
+	person2.name = "Alvin"; // this feels sad to write
+	person2.born = 1912;
+	person2.died = 1912;
+
+	person3.name = "Theodore";
+	person3.born = 1911;
+	person3.died = 1963;
+
+	std::vector<lives> lifeList = { person1, person2, person3 };
 
 	while (response != 99) {
 		cout << "Which example would you like to see?" << endl;
@@ -48,6 +63,7 @@ int main() {
 		cout << "7. Check to see which num is larger" << endl;
 		cout << "8. Print an english version of an int" << endl;
 		cout << "9. Use only add operator for mult / divide / subtract" << endl;
+		cout << "10. find the year that most people in a list were alive" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -92,6 +108,9 @@ int main() {
 			addOnly(5, 3, 2); // 5, 3, mult
 			addOnly(10, 5, 3); // 10, 5, div
 			addOnly(23, 5, 3); // div
+			break;
+		case 10:
+			mostAlive(lifeList);
 			break;
 		default:
 			cout << "exiting" << endl;

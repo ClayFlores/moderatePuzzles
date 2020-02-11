@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include <math.h> // signbit
 #include <iostream>
 
@@ -13,3 +14,14 @@ void intToEng(int);
 
 // 9.) use only add operator to do mult/div/sub
 void addOnly(int, int, int);
+
+// 10.) given list of birth/death find year with most people alive
+struct lives{
+	string name;
+	int born;
+	int died;
+};
+struct yrCount {
+	int year, count;
+};
+void mostAlive(std::vector<lives>);
