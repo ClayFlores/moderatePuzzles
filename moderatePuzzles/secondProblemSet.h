@@ -25,3 +25,6 @@ struct yrCount {
 	int year, count;
 };
 void mostAlive(std::vector<lives>);
+
+//11.) wooden diving board
+void dBoard(int);

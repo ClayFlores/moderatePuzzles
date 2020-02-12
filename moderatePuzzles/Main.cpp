@@ -64,6 +64,7 @@ int main() {
 		cout << "8. Print an english version of an int" << endl;
 		cout << "9. Use only add operator for mult / divide / subtract" << endl;
 		cout << "10. find the year that most people in a list were alive" << endl;
+		cout << "11. Find all lengths of a diving board" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -111,6 +112,13 @@ int main() {
 			break;
 		case 10:
 			mostAlive(lifeList);
+			break;
+		case 11:
+			cout << "Length of board?\t";
+			std::cin >> response;
+			dBoard(response);
+			if (response == 99) // handling potential problem
+				response = 0;
 			break;
 		default:
 			cout << "exiting" << endl;

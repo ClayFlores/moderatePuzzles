@@ -1,6 +1,7 @@
 #include "secondProblemSet.h"
 
 void printIndVal(char);
+bool isInList(std::vector<int>, int);
 // this function takes an int as an arg and returns and english version of it
 // (100 would be one hundred) max int val is 2147483648 on this compiler (2^31)
 // this is FAIRLY close, just need to add edge cases for numbers like thirty (english sucks sometimes)
@@ -140,4 +141,35 @@ void mostAlive(std::vector<lives> list) {
 		i = 0;
 	}
 	cout << mostLive << endl;
+}
+
+// you are building a diving board by placing a bunch of planks of wood end-to-end.
+// there are two types of planks, longer and shorter. you must use exactly k planks.
+// this method generates all possible lengths
+// playing around with a karnaugh map it seems that there are k+1 lengths (3 gives 4 poss etc.)
+// assume 1 is short and 2 is long
+void dBoard(int length) {
+	std::vector<int> board; 
+	int longB = 2;
+	int shortB = 1;
+	int sum = 0;
+
+	sum = length * longB; // longest plank
+	board.push_back(sum);
+	for (int i = length; i >= 0; i--) {
+		if (!isInList(board,sum)) {
+			board.push_back(sum);
+		}
+		sum--;
+	}
+	for (int j = 0; j < board.size(); j++) {
+		cout << "Board Length: " << board[j] << endl;
+	}
+}
+bool isInList(std::vector<int> list, int num) {
+	for(int i=0;i<list.size();i++){
+		if (num == list[i])
+			return true;
+	}
+	return false;
 }
