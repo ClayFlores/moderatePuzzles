@@ -118,10 +118,12 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="firstProblemSet.cpp" />
     <ClCompile Include="secondProblemSet.cpp" />
+    <ClCompile Include="thirdProblemSet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="firstProblemSet.h" />
     <ClInclude Include="secondProblemSet.h" />
+    <ClInclude Include="thirdProblemSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

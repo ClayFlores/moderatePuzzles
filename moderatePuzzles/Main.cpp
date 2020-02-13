@@ -7,6 +7,7 @@
 
 #include "firstProblemSet.h"
 #include "secondProblemSet.h"
+#include "thirdProblemSet.h"
 
 using std::cout;
 using std::endl;
@@ -52,6 +53,8 @@ int main() {
 
 	std::vector<lives> lifeList = { person1, person2, person3 };
 
+	string xmlString = "<family lastName=\"McDowell\" state=\"CA\">";
+
 	while (response != 99) {
 		cout << "Which example would you like to see?" << endl;
 		cout << "1. Number Swapper" << endl;
@@ -65,6 +68,7 @@ int main() {
 		cout << "9. Use only add operator for mult / divide / subtract" << endl;
 		cout << "10. find the year that most people in a list were alive" << endl;
 		cout << "11. Find all lengths of a diving board" << endl;
+		cout << "12. Print a mock XML string" << endl;
 
 		cout << "99. Exit" << endl;
 		std::cin >> response;
@@ -120,10 +124,14 @@ int main() {
 			if (response == 99) // handling potential problem
 				response = 0;
 			break;
+		case 12:
+			mockXML(xmlString);
+			break;
 		default:
 			cout << "exiting" << endl;
 			response = 99;
 		}
+		cout << endl;
 		cout << endl;
 	}
 	return 0;
